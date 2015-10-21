@@ -1,0 +1,32 @@
+package wyrazy;
+
+import java.util.Scanner;
+
+public class Zdania {
+
+	public static void main(String[] args) {
+		System.out.println("Wprowadz liczbe wyrazow");
+		Scanner input = new Scanner(System.in);
+		
+		int words = input.nextInt();
+		input.nextLine();
+		
+		String[] slowa = new String[words];
+		
+		for(int i = 0; i<words; i++) {
+			System.out.println("Podaj slowo numer " + (i+1));
+			slowa[i] = input.nextLine();
+		}
+		
+		StringBuilder builder = new StringBuilder();
+		
+		for (int i = 0; i<words; i++) {
+			builder.append(slowa[i].charAt(slowa[i].length() - 1));
+		}
+		
+		System.out.println("Nowe slowo to: " + builder.toString());
+		input.close();
+
+	}
+
+}
